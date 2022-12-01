@@ -48,3 +48,5 @@ while x.islower() or x.isupper() or len(x) < 8:
     print('Пароль неверен. Введите другой пароль: ')
     x = str(input())
 print('Пароль сохранён')
+
+#внес изменение
