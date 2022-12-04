@@ -11,8 +11,8 @@ while x < y:
     year+=1
     x += x*p//100
 else:
-    print(year)
-    print(x)
+    print(f'Надо подождать {year} лет')
+    print(f'Будет накоплено {x} рублей')
 
 print('Задание 2:')
 
