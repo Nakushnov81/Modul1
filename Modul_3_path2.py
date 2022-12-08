@@ -2,11 +2,12 @@
 
 print('Задание 1: ')
 l = [1, 4, 1, 6, 'hello', 5, 'hello']
-y = list(set(l))
-s=[]
-for i in l:
-    if i not in y or y.remove(i):
-        s.append(i)
+
+s = []
+for i in range(0, len(l)):
+    for j in range(0, len(l)):
+        if i != j and l[i] == l[j] and l[i] not in s:
+            s.append(l[i])
 print(s)
 
 print('Задание 2: ')
