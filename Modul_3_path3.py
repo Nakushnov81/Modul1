@@ -1,11 +1,11 @@
-print('Задание 1: ')
+'''print('Задание 1: ')
 from math import sqrt
 a = int(input('Введите длину первой стороны: '))
 b = int(input('Введите длину второй стороны: '))
 c = int(input('Введите длину третей стороны: '))
 def area(a, b, c):
     p = (a+b+c)/2
-    s = sqrt(p*(p-a)*(p-b)*(p-c))
+    s = sqrt(p*(p-a)*(p-b)*(p-c)) # без импорта библиотеки (p*(p-a)*(p-b)*(p-c))**0.5
     print(f'Площадь треугольника равна {s}')
 area(a, b, c)
 
@@ -30,14 +30,48 @@ def string(d):
 string(s)
 
 # Вариант 2
-'''
+
 def string(d):
     p = str()
     for i in d.split():
         if len(i) < 5:
             p += i+' '
     print(p)
-string(s)'''
+string(s)
+'''
+print('Задание 3: ')
+
+from random import randint
+n = int(input('Введите количесво чисел: '))
+m = [randint(0, 100) for i in range(n)]
+print(m)
+s = []
+def maxi(d):
+    for i in range(0, n):
+        if d[i] > 10:
+            s.append(d[i]/10)
+        else:
+            s.append(d[i])
+    s.sort(reverse=True)
+
+    print(s)
+#def exchange(m):
+#    for i in range(0, n):
+
+
+maxi(m)
+'''def maxim(m):
+    for i in range(0, len(m)):
+        if m[i] > 10:
+            m[i] = m[i]/10
+            s.append(m[i])
+            return s.append(m[i])
+    print(s)
+
+maxim(m)'''
+
+
+
 
 
 
