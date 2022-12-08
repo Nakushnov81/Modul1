@@ -2,7 +2,6 @@
 
 print('Задание 1: ')
 l = [1, 4, 1, 6, 'hello', 5, 'hello']
-
 s = []
 for i in range(0, len(l)):
     for j in range(0, len(l)):
@@ -11,7 +10,6 @@ for i in range(0, len(l)):
 print(s)
 
 print('Задание 2: ')
-
 from random import randint
 n = 5
 m = [[randint(0, 100) for i in range(n)] for j in range(n)]
@@ -24,7 +22,6 @@ print(m)
 print(s)
 
 print('Задание 3: ')
-
 eng = {
     'рука': 'hand',
     'нога': 'leg',
