@@ -1,4 +1,4 @@
-'''print('Задание 1: ')
+print('Задание 1: ')
 from math import sqrt
 a = int(input('Введите длину первой стороны: '))
 b = int(input('Введите длину второй стороны: '))
@@ -29,7 +29,7 @@ def string(d):
     print(d)
 string(s)
 
-# Вариант 2
+'''Вариант 2
 
 def string(d):
     p = str()
@@ -37,42 +37,21 @@ def string(d):
         if len(i) < 5:
             p += i+' '
     print(p)
-string(s)
-'''
+string(s)'''
+
 print('Задание 3: ')
 
 from random import randint
 n = int(input('Введите количесво чисел: '))
-m = [randint(0, 100) for i in range(n)]
+m = [randint(0, 99) for i in range(n)]
 print(m)
-s = []
-def maxi(d):
-    for i in range(0, n):
-        if d[i] > 10:
-            s.append(d[i]/10)
-        else:
-            s.append(d[i])
-    s.sort(reverse=True)
-
-    print(s)
-#def exchange(m):
-#    for i in range(0, n):
-
-
+def maxi(m):
+    s = list(map(str, m))
+    for i in range(n - 1):
+        for j in range(0, n - i - 1):
+                x = s[j] + s[j+1]
+                y = s[j+1] + s[j]
+                if int(x) < int(y):
+                    s[j], s[j+1] = s[j+1], s[j]
+    print(''.join(s))
 maxi(m)
-'''def maxim(m):
-    for i in range(0, len(m)):
-        if m[i] > 10:
-            m[i] = m[i]/10
-            s.append(m[i])
-            return s.append(m[i])
-    print(s)
-
-maxim(m)'''
-
-
-
-
-
-
-
