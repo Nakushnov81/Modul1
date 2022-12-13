@@ -27,7 +27,7 @@ def input_log(login, password):
         print('Логин не найден')
 
 while True:
-    q1 = input('Если вы хотите войти нажмите i, если зарегистрироваться - r')
+    q1 = input('Если вы хотите войти нажмите i, если зарегистрироваться - r: ')
     if q1 == 'i':
         login = input('Введите логин: ')
         password = input('Введите пароль: ')
@@ -36,5 +36,4 @@ while True:
         login = input('Введите логин: ')
         password = input('Введите пароль: ')
         x = register(login, password)
-
     else: break
