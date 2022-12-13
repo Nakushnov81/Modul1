@@ -1,39 +1,40 @@
 print('Задание 1: ')
 import json
-x = {}
-
+# x = {'user': 'user1'}
+# with open('register.json', 'w', encoding='utf-8') as file:
+#     json.dump(x, file)
 
 def register(login, password):
     with open('register.json', 'r', encoding='utf-8') as file:
         x = json.load(file)
-        login = input('Введите логин: ')
-        password = input('Введите пароль: ')
-        if login not in x.keys():
-            x[login] = password
-            with open('register.json', 'w', encoding='utf-8') as file:
-                json.dump(login, file)
-        else: print('Логин занят')
+    if login not in x:
+        x[login] = password
+        with open('register.json', 'w', encoding='utf-8') as file:
+            json.dump(x, file)
+            print('Сохранен')
+    else:
+        print('Логин занят')
 
-def input_log():
+def input_log(login, password):
     with open('register.json', 'r', encoding='utf-8') as file:
         x = json.load(file)
-        login = input('Введите логин: ')
-        password = input('Введите пароль: ')
-        if login in x:
-            if password == x[login]:
-                print('Вход разрешен!')
-            else:
-                print('Неверный пароль')
+    if login in x:
+        if password == x[login]:
+            print('Вход разрешен!')
         else:
-            print('Логин не найден')
-
+             print('Неверный пароль')
+    else:
+        print('Логин не найден')
 
 while True:
-    q1 = input('Вход или Регистрация')
-    if q1 == 'вход':
-        input_log()
+    q1 = input('Если вы хотите войти нажмите i, если зарегистрироваться - r')
+    if q1 == 'i':
+        login = input('Введите логин: ')
+        password = input('Введите пароль: ')
+        x = input_log(login, password)
+    elif q1 == 'r':
+        login = input('Введите логин: ')
+        password = input('Введите пароль: ')
+        x = register(login, password)
 
-    elif q1 == 'регистрация':
-        register()
-    #else:
-        #break
+    else: break
